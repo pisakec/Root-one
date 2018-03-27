@@ -15,8 +15,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
     <link rel="alternate" href="https://sbobet.gclub-casino.com/" hreflang="th"/>
-
-    <meta charset="<?php bloginfo( 'charset' ); ?>"/>
     <meta name="viewport" content="width=device-width"/>
     <?php wp_head(); ?>
     <style>
