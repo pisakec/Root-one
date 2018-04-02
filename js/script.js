@@ -1,6 +1,6 @@
 WebFont.load({
 	google: {
-		families: ['Lato:300,400,700,900','Montserrat:300,400,500,700,800,900']
+		families: ['Kanit:400,500,700,900']
 	}
 });
 
@@ -65,19 +65,52 @@ jQuery(document).ready(function ($) {
 		}]
 	})
 });
-
 jQuery(document).ready(function ($) {
-	$("#contact-menu").mmenu({
-		extensions: ["pagedim"],
-		"offCanvas": {
-			"zposition": "front",
-			"position": "right"
+	var $menu = $("#mobile-nav").mmenu({
+		extensions: ["border-offset", "fx-menu-fade", "fx-listitems-slide", "pagedim-black"],
+		"iconbar": {
+			"add": true,
+			"top": [
+				"<a class='icon-home' href='#/'></a>",
+				"<a class='icon-facebook' href='#/'></a>",
+				"<a class='icon-twitter' href='#/'></a>",
+				"<a class='icon-gplus' href='#/'></a>"
+			],
+			"bottom": []
 		},
 		navbar: {
-        title: "my custom title"
-    },
-	})
+			title: ""
+		},
+		"navbars": [{
+			"position": "top",
+			"content": ["<span class='logo'></span>"],
+			height: 2
+
+		}],
+		"iconPanels": true,
+		"counters": true,
+		"iconPanels": true
+	});
+
+	var $icon = $("#my-icon");
+	var API = $menu.data("mmenu");
+	$icon.on("click", function () {
+		API.open();
+	});
+
+	API.bind("open:finish", function () {
+		setTimeout(function () {
+			$icon.addClass("is-active");
+		}, 100);
+	});
+	API.bind("close:finish", function () {
+		setTimeout(function () {
+			$icon.removeClass("is-active");
+		}, 100);
+	});
+
 });
+
 jQuery(document).ready(function ($) {
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 5) {
@@ -99,32 +132,4 @@ jQuery('#back-to-top').click(function () {
 		scrollTop: 0
 	}, 800);
 	return !1
-});
-jQuery(document).ready(function ($) {
-/*	$("#mobile-nav").mmenu({
-		extensions: ["pagedim"],
-		navbar: {
-        title: "my custom title"
-    },
-	})*/
-	var $menu = $("#mobile-nav").mmenu({
-   //   options
-});
-var $icon = $("#my-icon");
-var API = $menu.data( "mmenu" );
-
-$icon.on( "click", function() {
-   API.open();
-});
-
-API.bind( "open:finish", function() {
-   setTimeout(function() {
-      $icon.addClass( "is-active" );
-   }, 100);
-});
-API.bind( "close:finish", function() {
-   setTimeout(function() {
-      $icon.removeClass( "is-active" );
-   }, 100);
-});
-});
+})
