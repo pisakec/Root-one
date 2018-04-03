@@ -1,6 +1,9 @@
 # Wordpress Blank Theme
 minimal theme
-This is a basic wordpress theme implementing wordpress best practice with slider ready and responsive menu as well as font icon with fontello.<br>
+This is a basic blank wordpress theme implementing wordpress best practice with slider ready and responsive menu as well as font icon with fontello.<br>
+<br>
+Create by http://pisake.com<br>
+<br>
 Please feel free to comments to improve this theme.<br>
 <br>
 Customize font icon at http://fontello.com/<br>
