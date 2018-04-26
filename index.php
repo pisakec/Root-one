@@ -5,7 +5,7 @@ Template Name: Homepage
 get_header();
 ?>
 <h1>index</h1>
-<main class="index">
+<main id="index">
 	<section class="wrapper">
 		<div class="content">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
