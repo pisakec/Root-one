@@ -24,7 +24,10 @@ add_theme_support( 'post-thumbnails' );
 //}
 //add_filter( 'the_content', 'remove_empty_p', 20, 1 );
 
-
+function themename_post_formats_setup() {
+    add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video' ) );
+}
+add_action( 'after_setup_theme', 'themename_post_formats_setup' );
 
 
 /* ==========================================================================
