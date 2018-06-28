@@ -31,7 +31,16 @@ add_action( 'after_setup_theme', 'themename_post_formats_setup' );
 
 
 /* ==========================================================================
-// Custom Scripting to Move JavaScript from the Head to the Footer
+Standard – The default post format
+Aside – A note like post, usually styled without title.
+Gallery – A gallery of images.
+Link – A link to another site.
+Image – An image or photograph
+Quote – A quotation.
+Status – Twitter like short status update
+Video – A post containing video
+Audio – An audio file.
+Chat – A chat transcript
 ========================================================================== */
 
 
