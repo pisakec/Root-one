@@ -1,4 +1,3 @@
-<br class="clearfx">
 <footer id="footer">
 
     <div class="wrapper">
