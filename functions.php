@@ -72,7 +72,7 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
 class MyTheme_Customize {
    /**
     * This hooks into 'customize_register' (available as of WP 3.4) and allows
-    * you to add new sections and controls to the Theme Customize screen.
+    * you to add new sections and controls to the Theme Customize  screen.
     * 
     * Note: To enable instant preview, we have to actually write a bit of custom
     * javascript. See live_preview() for more.
