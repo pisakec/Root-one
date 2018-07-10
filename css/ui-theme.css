@@ -197,7 +197,7 @@ layout
 ========================================================================== */
 
 .content{
-    min-height: 50vh;
+    min-height: 100vh;
 	padding: 1em;
 }
 .content.sidebar{
