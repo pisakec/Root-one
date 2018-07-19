@@ -1,3 +1,7 @@
 <aside id="sidebar">
-<img src="https://s-bobet.com/wp-content/themes/s-bobet/img/sidebar-contact-us.jpg" class="full-width" alt="ติดต่อเรา">
+
+<?php
+if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-1') ) :
+endif; ?>
+<img src="" class="full-width" alt="">
 </aside>

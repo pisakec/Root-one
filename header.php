@@ -18,6 +18,17 @@
             display: none;
         }
     </style>
+    <?php
+	function mytheme_customize_css()
+{
+    ?>
+         <style type="text/css">
+             h1 { color: <?php echo get_theme_mod('text_color', '#000000'); ?>; }
+         </style>
+    <?php
+}
+add_action( 'wp_head', 'mytheme_customize_css');
+	?>
 </head>
 
 

@@ -2,38 +2,22 @@
 
 get_header();
 ?>
-<main class="isflex category-page">
-<?php get_sidebar(); ?>
-<section class="content">
-
-<h1><?php single_cat_title(''); ?></h1>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	
-<?php static $count = 0; if ($count == "20") { break; } else { ?>
-				
-				<article>
-				<a href="<?php the_permalink() ?>" rel="bookmark">
+<h1>Tag</h1>
+<main id="category">
+	<section class="wrapper has-sidebar">
+		<div class="content sidebar">
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>					
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>				
+				<a href="<?php the_permalink()?>" class=""><?php the_post_thumbnail('full', array('class' => 'news-img-lg col-30')); ?></a>
 					<div class="entry">
-						<h3>
-							<?php the_title(); ?>
-						</h3>
-						<div class="img-crop">
-						<?php if(get_option( 'thumbnail_size_w')> 100 && get_option('thumbnail_crop') == 1) { the_post_thumbnail('full'); }else{ the_post_thumbnail(array(100,100)); } ?>
-						
-						</div>
-<?php if( function_exists('zilla_likes') ) zilla_likes(); ?>
+						<h2 class="header-m header-500"><a href="<?php the_permalink()?>" class=""><?php the_title(); ?></a> </h2>
+						<p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?> </p>
 					</div>
-					</a>
+					<a href="<?php the_permalink()?>" class="read-more btn"><i class="icon-eye"></i></a>
 				</article>
-				<?php $count++; } ?>
-
-				<?php endwhile; endif; ?>
-					<?php echo do_shortcode('[ajax_load_more post_type="post" posts_per_page="20" category="amateur" pause="true" scroll="false" transition="fade" images_loaded="true" button_label="Show More Videos" button_loading_label="Loading Videos"]'); ?>
-</section>
-
-
-
-
-
+			   <?php endwhile; endif; ?>
+		</div>
+		<?php get_sidebar(); ?>
+	</section>
 </main>
 <?php get_footer(); ?>
